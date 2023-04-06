@@ -30,3 +30,9 @@ If you'd like to attach a volume then run this
 ### Example ###
 an example of me using the src dir for go projects
 `docker run -it windle/lvim -v $(HOME)/go/src:/home/go/src /bin/zsh`
+
+## Pull image ##
+If you don't want to build the image which takes roughly 10 mins or so you can pull via `docker pull fluiddrakx/docker-lvim`
+
+### Thanks ###
+Thanks to the LunarVIM team for an easy to use out of the box config
