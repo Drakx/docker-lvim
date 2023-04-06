@@ -25,8 +25,8 @@ Below are just a few of the utilities installed
 ` docker run --rm -it windle/lvim /bin/zsh`
 
 If you'd like to attach a volume then run this
-`docker run -it -v {YOUR FOLDER LOCATION}:/home/kai/SOME LOCATION /bin/zsh`
+`docker run -it windle/lvim -v {YOUR FOLDER LOCATION}:/home/kai/SOME LOCATION /bin/zsh`
 
 ### Example ###
 an example of me using the src dir for go projects
-`docker run -it -v $(HOME)/go/src:/home/go/src /bin/zsh`
+`docker run -it windle/lvim -v $(HOME)/go/src:/home/go/src /bin/zsh`
