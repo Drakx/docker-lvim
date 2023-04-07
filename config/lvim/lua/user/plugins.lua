@@ -2,6 +2,7 @@ lvim.plugins = {
    --  { "ray-x/go.nvim" },
    --  { "nvim-lua/plenary.nvim" },
   { "akinsho/toggleterm.nvim" },
+  { "mfussenegger/nvim-dap-python" }
    --  { "folke/tokyonight.nvim" },
   {
     "tpope/vim-fugitive",
