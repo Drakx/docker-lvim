@@ -42,6 +42,9 @@ keymap("n", "M-k", ":resize +2<CR>", opts)
 keymap("n", "M-h", ":vertical resize -2<CR>", opts)
 keymap("n", "M-l", ":vertical resize +2<CR>", opts)
 
+-- highlighted text can be moved
+keymap("v", "K", ":m '>+1<CR>gv=gv", opts)
+keymap("v", "J", ":m '<-1<CR>gv=gv", opts)
 
 -- Change Telescope navigation to use j and k for navigation and n and p for history in both input and normal mode.
 -- we use protected-mode (pcall) just in case the plugin wasn't loaded yet.
@@ -64,7 +67,7 @@ lvim.builtin.telescope.defaults.mappings = {
 -- Use which-key to add extra bindings with the leader-key prefix
 lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
 lvim.builtin.which_key.mappings["t"] = {
-  name = "+Trouble",
+  name = "Trouble",
   r = { "<cmd>Trouble lsp_references<cr>", "References" },
   f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
   d = { "<cmd>Trouble document_diagnostics<cr>", "Diagnostics" },
