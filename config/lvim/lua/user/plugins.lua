@@ -1,4 +1,5 @@
 lvim.plugins = {
+  "mbbill/undotree",
   "kylechui/nvim-surround",
   "olexsmir/gopher.nvim",
   "leoluz/nvim-dap-go",
