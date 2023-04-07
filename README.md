@@ -38,5 +38,7 @@ an example of me using the src dir for go projects
 ## Pull image ##
 If you don't want to build the image which takes roughly 10 mins or so you can pull via `docker pull fluiddrakx/lvim`
 
+Don't forget to run `:PackerSync` after running the container
+
 ### Thanks ###
 Thanks to the LunarVIM team for an easy to use out of the box config
