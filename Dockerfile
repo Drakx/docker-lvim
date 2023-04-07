@@ -3,7 +3,8 @@ FROM alpine:latest
 LABEL description="Dockerized LunarVIM IDE for unfriendly environments with Go ready to go"
 
 RUN apk add --no-cache shadow xclip sudo ninja ranger shellcheck curl unzip wget zsh shfmt \
-  tmux openssh go cargo python3 cmake jq grep make git neovim ripgrep nodejs npm alpine-sdk openssl bash --update
+  tmux openssh go cargo python3 cmake jq grep make git neovim ripgrep nodejs npm alpine-sdk \
+  gzip openssl bash --update
 
 # Ensure PIP is installed
 RUN python3 -m ensurepip --upgrade
@@ -14,8 +15,6 @@ RUN sudo npm install -g neovim prettier \
   yaml-language-server bash-language-server \
   typescript-language-server ansible-language-server mysql-language-server \
   pyright sql-language-server vscode-langservers-extracted
-
-RUN cargo install stylua fd-find
 
 ENV \
   UID="1000" \
@@ -49,6 +48,8 @@ RUN echo "MyPassword" | chsh -s $(which zsh) kai
 WORKDIR $HOME
 USER $USER
 
+RUN cargo install stylua fd-find
+
 ENV LV_BRANCH='release-1.2/neovim-0.8'
 
 # Get the lunarvim config
@@ -80,14 +81,24 @@ RUN echo "export PATH=$GOBIN:$GOPATH:/usr/local/bin:$HOME/.local/bin:$PATH" >> /
 
 # Custom configs for tmux and lunarvim
 COPY tmux.conf $HOME/.tmux.conf
-COPY config.lua $HOME/.config/lvim/config.lua
+COPY config/lvim/ $HOME/.config/lvim/
 COPY gitconfig $HOME/.gitconfig
 
+RUN go install github.com/abenz1267/gomvp@latest
+RUN go install github.com/abice/go-enum@latest
 RUN go install github.com/cweill/gotests/gotests@latest
+RUN go install github.com/davidrjenni/reftools/cmd/fillstruct@latest
+RUN go install github.com/davidrjenni/reftools/cmd/fillswitch@latest
 RUN go install github.com/fatih/gomodifytags@latest
 RUN go install github.com/go-delve/delve/cmd/dlv@latest
+RUN go install github.com/golang/mock/mockgen@latest
+RUN go install github.com/jesseduffield/lazygit@latest
 RUN go install github.com/josharian/impl@latest
+RUN go install github.com/koron/iferr@latest
+RUN go install github.com/kyoh86/richgo@latest
+RUN go install github.com/onsi/ginkgo/v2/ginkgo@latest
 RUN go install github.com/ramya-rao-a/go-outline@latest
+RUN go install github.com/segmentio/golines@latest
 RUN go install github.com/uudashr/gopkgs/v2/cmd/gopkgs@latest
 RUN go install golang.org/x/lint/golint@latest
 RUN go install golang.org/x/tools/cmd/benchcmp@latest
@@ -104,9 +115,10 @@ RUN go install golang.org/x/tools/cmd/godex@latest
 RUN go install golang.org/x/tools/cmd/goimports@latest
 RUN go install golang.org/x/tools/cmd/gomvpkg@latest
 RUN go install golang.org/x/tools/cmd/gorename@latest
+RUN go install golang.org/x/tools/cmd/gorename@latest
 RUN go install golang.org/x/tools/cmd/gotype@latest
 RUN go install golang.org/x/tools/cmd/goyacc@latest
-RUN go install golang.org/x/tools/cmd/guru@latest
+RUN go install golang.org/x/tools/cmd/guru@latest 
 RUN go install golang.org/x/tools/cmd/ssadump@latest
 RUN go install golang.org/x/tools/cmd/stress@latest
 RUN go install golang.org/x/tools/cmd/stringer@latest
@@ -122,5 +134,6 @@ RUN go install golang.org/x/tools/go/analysis/unitchecker/...
 RUN go install golang.org/x/tools/go/gcexportdata/...
 RUN go install golang.org/x/tools/go/packages/gopackages@latest
 RUN go install golang.org/x/tools/gopls@latest
-RUN go install github.com/jesseduffield/lazygit@latest
-
+RUN go install golang.org/x/vuln/cmd/govulncheck@latest
+RUN go install gotest.tools/gotestsum@latest
+RUN go install mvdan.cc/gofumpt@latest
