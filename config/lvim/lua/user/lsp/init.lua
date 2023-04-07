@@ -20,7 +20,6 @@ vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "jdtls" })
 lvim.lsp.installer.setup.ensure_installed = {
 	"bashls",
 	"gopls",
-	"lua_ls",
 	"pyright",
 	"yamlls",
     "jsonls",
