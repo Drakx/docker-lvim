@@ -1,9 +1,8 @@
 lvim.plugins = {
-   --  { "ray-x/go.nvim" },
-   --  { "nvim-lua/plenary.nvim" },
-  { "akinsho/toggleterm.nvim" },
-  { "mfussenegger/nvim-dap-python" }
-   --  { "folke/tokyonight.nvim" },
+  "kylechui/nvim-surround",
+  "olexsmir/gopher.nvim",
+  "leoluz/nvim-dap-go",
+  "mfussenegger/nvim-dap-python",
   {
     "tpope/vim-fugitive",
     cmd = {
@@ -34,7 +33,4 @@ lvim.plugins = {
     "folke/trouble.nvim",
     cmd = "TroubleToggle",
   },
-  { "kylechui/nvim-surround" },
-  { "olexsmir/gopher.nvim" },
-  { "leoluz/nvim-dap-go" },
 }
