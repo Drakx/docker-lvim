@@ -74,7 +74,7 @@ ENV GOPATH="${HOME}/go" \
 # rather easy alias to copy the contents of a file
 # RUN echo 'alias copy="xclip -sel clip < $1"' >> $HOME/.bashrc
 RUN echo 'alias copy="xclip -sel clip < $1"' >> $HOME/.zshrc
-RUN echo 'alias lvim=nvim' >> $HOME/.zshrc
+RUN echo 'alias nvim=lvim' >> $HOME/.zshrc
 
 # Paths
 RUN echo "export PATH=$HOME/.fzf/bin:$GOBIN:$GOPATH:/usr/local/bin:$HOME/.local/bin:$HOME/.cargo/bin:$PATH" >> /home/kai/.zshrc
