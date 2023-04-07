@@ -1,5 +1,5 @@
 lvim.plugins = {
-  {"ray-x/go.nvim"},
+   -- { "ray-x/go.nvim" },
    --  { "nvim-lua/plenary.nvim" },
   { "folke/tokyonight.nvim" },
   {
