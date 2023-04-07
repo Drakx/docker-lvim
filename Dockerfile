@@ -4,7 +4,7 @@ LABEL description="Dockerized LunarVIM IDE for unfriendly environments with Go r
 
 RUN apk add --no-cache shadow xclip sudo ninja ranger shellcheck curl unzip wget zsh shfmt \
   tmux openssh go cargo python3 cmake jq grep make git neovim ripgrep nodejs npm alpine-sdk \
-  gzip openssl bash --update
+  gzip openssl bash mc --update
 
 # Ensure PIP is installed
 RUN python3 -m ensurepip --upgrade
