@@ -72,12 +72,13 @@ ENV GOPATH="${HOME}/go" \
   GOROOT="/usr/lib/go" 
 
 # rather easy alias to copy the contents of a file
-RUN echo 'alias copy="xclip -sel clip < $1"' >> $HOME/.bashrc
+# RUN echo 'alias copy="xclip -sel clip < $1"' >> $HOME/.bashrc
 RUN echo 'alias copy="xclip -sel clip < $1"' >> $HOME/.zshrc
+RUN echo 'alias lvim=nvim' >> $HOME/.zshrc
 
 # Paths
-RUN echo "export PATH=$GOBIN:$GOPATH:/usr/local/bin:$HOME/.local/bin:$HOME/.cargo/bin:$PATH" >> /home/kai/.zshrc
-RUN echo "export PATH=$GOBIN:$GOPATH:/usr/local/bin:$HOME/.local/bin:$HOME/.cargo/bin:$PATH" >> /home/kai/.bashrc
+RUN echo "export PATH=$HOME/.fzf/bin:$GOBIN:$GOPATH:/usr/local/bin:$HOME/.local/bin:$HOME/.cargo/bin:$PATH" >> /home/kai/.zshrc
+# RUN echo "export PATH=$HOME/.fzf/bin:$GOBIN:$GOPATH:/usr/local/bin:$HOME/.local/bin:$HOME/.cargo/bin:$PATH" >> /home/kai/.bashrc
 
 # Custom configs for tmux and lunarvim
 COPY tmux.conf $HOME/.tmux.conf
