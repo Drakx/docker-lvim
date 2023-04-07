@@ -76,13 +76,15 @@ RUN echo 'alias copy="xclip -sel clip < $1"' >> $HOME/.bashrc
 RUN echo 'alias copy="xclip -sel clip < $1"' >> $HOME/.zshrc
 
 # Paths
-RUN echo "export PATH=$GOBIN:$GOPATH:/usr/local/bin:$HOME/.local/bin:$PATH" >> /home/kai/.zshrc
-RUN echo "export PATH=$GOBIN:$GOPATH:/usr/local/bin:$HOME/.local/bin:$PATH" >> /home/kai/.bashrc
+RUN echo "export PATH=$GOBIN:$GOPATH:/usr/local/bin:$HOME/.local/bin:$HOME/.cargo/bin:$PATH" >> /home/kai/.zshrc
+RUN echo "export PATH=$GOBIN:$GOPATH:/usr/local/bin:$HOME/.local/bin:$HOME/.cargo/bin:$PATH" >> /home/kai/.bashrc
 
 # Custom configs for tmux and lunarvim
 COPY tmux.conf $HOME/.tmux.conf
 COPY config/lvim/ $HOME/.config/lvim/
 COPY gitconfig $HOME/.gitconfig
+
+RUN sudo chown -R kai $HOME/.config/lvim
 
 RUN go install github.com/abenz1267/gomvp@latest
 RUN go install github.com/abice/go-enum@latest
