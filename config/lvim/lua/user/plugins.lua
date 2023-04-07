@@ -1,6 +1,7 @@
 lvim.plugins = {
    -- { "ray-x/go.nvim" },
    --  { "nvim-lua/plenary.nvim" },
+  { "akinsho/toggleterm.nvim" },
   { "folke/tokyonight.nvim" },
   {
     "tpope/vim-fugitive",
@@ -28,4 +29,9 @@ lvim.plugins = {
   	require("todo-comments").setup()
     end,
   },
+  {
+    "folke/trouble.nvim",
+    cmd = "TroubleToggle",
+  },
+  { "kylechui/nvim-surround" },
 }
