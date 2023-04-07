@@ -1,12 +1,13 @@
-# Personal lvim docker setup #
+# Personal lvim dev environment docker setup #
 
-Dockerized LunarVIM IDE for unfriendly environments with Go ready to go
+Dockerized LunarVIM IDE for unfriendly environments with Go ready to go.
+
 The company I work for block connections to npm and other utilities needed for
 LunarVIM to work correctly out of the box. I've tried to include as many language servers
 as possible (well at least the common ones)
 
-
-Below are just a few of the utilities installed
+This image is more or less is becoming a full blown dev environment for "just in case" moments.
+While keeping the image as small as possible some of the utilities included
 
 * Go
 * tmux
@@ -16,6 +17,9 @@ Below are just a few of the utilities installed
 * ripgrep
 * fd-find
 * mc (midnight commander)
+* tldr
+* oh-my-zsh
+* git
 
 
 ## Build ##
