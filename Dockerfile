@@ -10,7 +10,7 @@ RUN apk add --no-cache shadow xclip sudo ninja ranger shellcheck curl unzip wget
 RUN python3 -m ensurepip --upgrade
 
 # Ensure we have as many language servers and formatters installed as possible
-RUN sudo pip3 install pynvim black flake8
+RUN sudo pip3 install pynvim black flake8 tldr
 RUN sudo npm install -g neovim prettier \
   yaml-language-server bash-language-server \
   typescript-language-server ansible-language-server mysql-language-server \
