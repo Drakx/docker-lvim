@@ -56,7 +56,7 @@ local setup = {
 		align = "left",                                                        -- align columns left, center or right
 	},
 	ignore_missing = true,                                                     -- enable this to hide mappings for which you didn't specify a label
-	hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
+	hidden = { "<silent>", "<cmd>", "<Cmd>", "<cr>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
 	show_help = true,                                                          -- show help message on the command line when the popup is visible
 	triggers = "auto",                                                         -- automatically setup triggers
 	-- triggers = {"<leader>"} -- or specify a list manually
@@ -79,53 +79,36 @@ local opts = {
 }
 
 local mappings = {
-	["a"] = { "<cmd>Alpha<cr>", "Alpha" },
+	["a"] = { "<cmd>Alpha<cr>", "[A]lpha" },
 	["b"] = {
 		"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-		"Buffers",
+		"[B]uffers",
 	},
+	["c"] = { "<cmd>bdelete!<cr>", "[C]lose Buffer" },
 	["d"] = {
 		name = "Debug",
 		b = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "[D]ebug [B]reakpoint" },
-		-- b = { require('dap').toggle_breakpoint, "[D]ebug [B]reakpoint" },
-		c = { "<cmd>lua require'dap'.continue()<cr>", "Continue" },
-		l = { "<cmd>lua require'dap'.run_last()<cr>", "Last" },
-		r = { "<cmd>lua require'dap'.repl.toggle()<cr>", "Repl" },
+		c = { "<cmd>lua require'dap'.continue()<cr>", "[D]ebug [C]ontinue" },
+		l = { "<cmd>lua require'dap'.run_last()<cr>", "[D]ebug [L]ast" },
+		r = { "<cmd>lua require'dap'.repl.toggle()<cr>", "[D]ebug [R]epl" },
 		s = {
 			name = "Step",
-			i = { "<cmd>lua require'dap'.step_into()<cr>", "Into" },
-			o = { "<cmd>lua require'dap'.step_over()<cr>", "Over" },
-			O = { "<cmd>lua require'dap'.step_out()<cr>", "Out" },
+			i = { "<cmd>lua require'dap'.step_into()<cr>", "[S]tep [I]nto" },
+			o = { "<cmd>lua require'dap'.step_over()<cr>", "[S]tep [O]ver" },
+			O = { "<cmd>lua require'dap'.step_out()<cr>", "[S]tep [O]ut" },
 		},
-		u = { "<cmd>lua require'dapui'.toggle()<cr>", "UI" },
-		x = { "<cmd>lua require'dap'.terminate()<cr>", "Exit" },
+		u = { "<cmd>lua require'dapui'.toggle()<cr>", "[D]ebug [U]I" },
+		x = { "<cmd>lua require'dap'.terminate()<cr>", "[D]ebug [E]xit" },
 	},
-	["e"] = { "<cmd>Neotree toggle<cr>", "Explorer" },
-	["w"] = { "<cmd>w!<CR>", "Save" },
-	["q"] = { "<cmd>q!<CR>", "Quit" },
-	["c"] = { "<cmd>bdelete!<CR>", "Close Buffer" },
-	["f"] = {
-		"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-		"Find files",
-	},
-	["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
-	["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
-	-- p = {
-	-- 	name = "Packer",
-	-- 	c = { "<cmd>PackerCompile<cr>", "Compile" },
-	-- 	i = { "<cmd>PackerInstall<cr>", "Install" },
-	-- 	s = { "<cmd>PackerSync<cr>", "Sync" },
-	-- 	S = { "<cmd>PackerStatus<cr>", "Status" },
-	-- 	u = { "<cmd>PackerUpdate<cr>", "Update" },
+	["e"] = { "<cmd>Neotree toggle<cr>", "[E]xplorer" },
+	-- ["f"] = {
+	-- 	"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+	-- 	"Find files",
 	-- },
-	L = {
-		name = 'Lazy',
-		i = { "<cmd>Lazy install<cr>", "Install" },
-		u = { "<cmd>Lazy update<cr>", "Clean" },
-	},
-	g = {
+	-- ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
+	["g"] = {
 		name = "Git",
-		g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
+		g = { "<cmd>lua _LAZYGIT_TOGGLE()<cr>", "Lazygit" },
 		j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
 		k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
 		l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
@@ -146,28 +129,55 @@ local mappings = {
 			"Diff",
 		},
 	},
-	l = {
+	["l"] = {
 		name = "LSP",
-		a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
+		a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code [A]ction" },
 		d = {
 			"<cmd>Telescope lsp_document_diagnostics<cr>",
-			"Document Diagnostics",
+			"Document [D]iagnostics",
 		},
-		w = {
-			"<cmd>Telescope lsp_workspace_diagnostics<cr>",
-			"Workspace Diagnostics",
-		},
-		f = { "<cmd>lua vim.lsp.buf.format()<cr>", "Format" },
+		f = { "<cmd>lua vim.lsp.buf.format()<cr>", "[F]ormat" },
 		-- f = { require('vim.lsp.buf').format(), "Format" },
-		i = { "<cmd>LspInfo<cr>", "Info" },
-		I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
+		g = {
+			name = "Go",
+			a = { "<cmd>GoAlt<cr>", "alternate impl and test" },
+			b = { "<cmd>GoBuild<cr>", "go build" },
+			c = {
+				name = "Coverage",
+				c = { "<cmd>GoCoverage<cr>", "annotate with coverage" },
+				t = { "<cmd>GoCoverageToggle<cr>", "toggle coverage display" },
+				C = { "<cmd>GoCoverageClear<cr>", "clear coverage" },
+				b = { "<cmd>GoCoverageBrowser<cr>", "open coverage in a browser" },
+			},
+			d = { "<cmd>GoDoc<cr>", "go doc" },
+			-- e = { "<cmd>GoCheat<cr>", "go cheat with search topic" },
+			-- i = { "<cmd>GoInstallDeps<cr>", "Install Go deps" },
+			i = { require('gopher.api').install_deps, "Install Go deps" },
+			m = {
+				name = "Module",
+				-- i = { require('gopher.api').mod('init'), "Go Mod Init" },
+				-- t = { require('gopher.api').mod('tidy'), "Go Mod Tidy" },
+			},
+			r = { "<cmd>GoRun<cr>", "go run" },
+			t = {
+				name = "Test",
+				a = { "<cmd>GoTest ./...<cr>", "go test ./..." },
+				s = { "<cmd>GoTestFunc<cr>", "go test -s [current test]" },
+				d = {
+					"<cmd>call vimspector#LaunchWithSettings( #{ configuration: 'single test', TestName: go#util#TestName() } )<cr>",
+					"Debug current test",
+				},
+			},
+		},
+		i = { "<cmd>LspInfo<cr>", "[I]nfo" },
+		I = { "<cmd>LspInstallInfo<cr>", "[I]nstaller Info" },
 		j = {
-			"<cmd>lua vim.lsp.diagnostic.goto_next()<CR>",
-			"Next Diagnostic",
+			"<cmd>lua vim.lsp.diagnostic.goto_next()<cr>",
+			"[N]ext Diagnostic",
 		},
 		k = {
 			"<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>",
-			"Prev Diagnostic",
+			"[P]rev Diagnostic",
 		},
 		l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
 		q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
@@ -177,55 +187,27 @@ local mappings = {
 			"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
 			"Workspace Symbols",
 		},
-		g = {
-			name = "Go",
-			a = { "<cmd>GoAlt<CR>", "alternate impl and test" },
-			b = { "<cmd>GoBuild<CR>", "go build" },
-			c = {
-				name = "Coverage",
-				c = { "<cmd>GoCoverage<CR>", "annotate with coverage" },
-				t = { "<cmd>GoCoverageToggle<CR>", "toggle coverage display" },
-				C = { "<cmd>GoCoverageClear<CR>", "clear coverage" },
-				b = { "<cmd>GoCoverageBrowser<CR>", "open coverage in a browser" },
-			},
-			d = { "<cmd>GoDoc<CR>", "go doc" },
-			-- e = { "<cmd>GoCheat<CR>", "go cheat with search topic" },
-			-- i = { "<cmd>GoInstallDeps<CR>", "Install Go deps" },
-			i = { require('gopher.api').install_deps, "Install Go deps" },
-			m = {
-				name = "Module",
-				-- i = { require('gopher.api').mod('init'), "Go Mod Init" },
-				-- t = { require('gopher.api').mod('tidy'), "Go Mod Tidy" },
-			},
-			r = { "<cmd>GoRun<CR>", "go run" },
-			t = {
-				name = "Test",
-				a = { "<cmd>GoTest ./...<CR>", "go test ./..." },
-				s = { "<cmd>GoTestFunc<CR>", "go test -s [current test]" },
-				d = {
-					"<cmd>call vimspector#LaunchWithSettings( #{ configuration: 'single test', TestName: go#util#TestName() } )<CR>",
-					"Debug current test",
-				},
-			},
+		w = {
+			"<cmd>Telescope lsp_workspace_diagnostics<cr>",
+			"[W]orkspace Diagnostics",
 		},
 	},
-	s = {
+	["s"] = {
 		name = "Search",
-		-- p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
-		b = { require('telescope.builtin').git_branches, "[S]earch git [b]ranches" },
-		c = { require('telescope.builtin').colorscheme, "[S]earch [c]olorscheme" },
-		d = { require('telescope.builtin').diagnostics, "[S]earch [d]iagnostics" },
-		f = { require('telescope.builtin').find_files, "[S]earch [f]iles" },
-		g = { require('telescope.builtin').live_grep, "[S]earch by [g]rep" },
-		h = { require('telescope.builtin').help_tags, "[S]earch [h]elp" },
-		k = { require('telescope.builtin').keymaps, "[S]earch [k]eymaps" },
-		r = { require('telescope.builtin').oldfiles, "[S]earch [r]ecently opened files" },
-		w = { require('telescope.builtin').grep_string, "[S]earch current [w]ord" },
-		C = { require('telescope.builtin').commands, "[S]earch [C]ommands" },
-		M = { require('telescope.builtin').man_pages, "[S]earch [M]an Pages" },
-		R = { require('telescope.builtin').registers, "[S]earch [R]egisters" },
+		b = { "<cmd>Telescope git_branches<cr>", "[S]earch git [b]ranches" },
+		c = { "<cmd>Telescope colorscheme<cr>", "[S]earch [c]olorscheme" },
+		d = { "<cmd>Telescope diagnostics<cr>", "[S]earch [d]iagnostics" },
+		f = { "<cmd>Telescope find_files<cr>", "[S]earch [f]iles" },
+		g = { "<cmd>Telescope live_grep<cr>", "[S]earch by [g]rep" },
+		h = { "<cmd>Telescope help_tags<cr>", "[S]earch [h]elp" },
+		k = { "<cmd>Telescope keymaps<cr>", "[S]earch [k]eymaps" },
+		r = { "<cmd>Telescope oldfiles<cr>", "[S]earch [r]ecently opened files" },
+		w = { "<cmd>Telescope grep_string<cr>", "[S]earch current [w]ord" },
+		C = { "<cmd>Telescope commands<cr>", "[S]earch [C]ommands" },
+		M = { "<cmd>Telescope man_pages<cr>", "[S]earch [M]an Pages" },
+		R = { "<cmd>Telescope registers<cr>", "[S]earch [R]egisters" },
 	},
-	t = {
+	["t"] = {
 		name = "Terminal",
 		-- n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
 		u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
@@ -234,6 +216,15 @@ local mappings = {
 		f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
 		h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
 		v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
+	},
+	["w"] = { "<cmd>w!<cr>", "[W]rite" },
+	["q"] = { "<cmd>q!<cr>", "[Q]uit" },
+	["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "[P]rojects" },
+	["L"] = {
+		name = 'Lazy',
+		i = { "<cmd>Lazy install<cr>", "[L]azy [I]nstall" },
+		u = { "<cmd>Lazy update<cr>", "[L]azy [U]pdate" },
+		s = { "<cmd>Lazy sync<cr>", "[L]azy [S]ync" }
 	},
 }
 

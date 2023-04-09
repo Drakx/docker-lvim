@@ -2,7 +2,6 @@ return {
   "ahmedkhalf/project.nvim",
   version = "*",
   config = function()
-
     require('project_nvim').setup {
       ---@usage set to false to disable project.nvim.
       --- This is on by default since it's currently the expected behavior.

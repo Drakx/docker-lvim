@@ -1,17 +1,15 @@
 local options = {
-	foldenable = true,
-	foldmethod = "syntax", -- Folds
-	wrap = false,
+	foldenable = true,   -- Folds
+	foldmethod = "syntax",
+	wrap = false,        -- Wrap text
 	expandtab = false,
-	swapfile = false, -- creates a swapfile
-	fileencoding = 'utf-8',
-	-- Set default indent
-	shiftwidth = 4,
+	swapfile = false,    -- Creates a swapfile
+	fileencoding = 'utf-8', -- File encoding
+	shiftwidth = 4,      -- Default indent
 	tabstop = 4,
-	-- splits
-	splitbelow = true,
+	splitbelow = true,   -- Splits
 	splitright = true,
-	termguicolors = true,
+	termguicolors = true, -- Term colours
 }
 
 if vim.bo.filetype == 'python' then

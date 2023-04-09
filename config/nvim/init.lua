@@ -181,8 +181,9 @@ require('lazy').setup({
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
   --       Uncomment any of the lines below to enable them.
-  -- require 'kickstart.plugins.autoformat',
-  -- require 'kickstart.plugins.debug',
+  { import = 'kickstart.plugins.autoformat' },
+  { import = 'kickstart.plugins.debug' },
+  { import = 'kickstart.plugins.golang' },
 
   -- NOTE: The import below automatically adds your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    You can use this folder to prevent any conflicts with this init.lua if you're interested in keeping
@@ -193,6 +194,14 @@ require('lazy').setup({
   --    An additional note is that if you only copied in the `init.lua`, you can just comment this line
   --    to get rid of the warning telling you that there are not plugins in `lua/custom/plugins/`.
   { import = 'custom.plugins' },
+  -- { import = 'custom.plugins.autopairs' },
+  -- { import = 'custom.plugins.undotree' },
+  -- { import = 'custom.plugins.bufferline' },
+  -- { import = 'custom.plugins.golang' },
+  -- { import = 'custom.plugins.lualine' },
+  -- { import = 'custom.plugins.mkdir' },
+  -- { import = 'custom.plugins.neotree' },
+  -- { import = 'custom.plugins.projects' },
 }, {})
 
 -- [[ Setting options ]]
@@ -294,7 +303,7 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
-  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'vimdoc', 'vim' },
+  ensure_installed = { 'json', 'yaml', 'bash', 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'vimdoc', 'vim' },
 
   -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
   auto_install = false,
@@ -414,9 +423,15 @@ end
 --  the `settings` field of the server config. You must look up that documentation yourself.
 local servers = {
   -- clangd = {},
-  -- gopls = {},
-  -- pyright = {},
-  -- rust_analyzer = {},
+  gopls = {},
+  pyright = {},
+  rust_analyzer = {},
+  -- jq = {},
+  bashls = {
+    filetypes = { 'sh', 'zsh' },
+  },
+  yamlls = {},
+  jsonls = {},
   -- tsserver = {},
 
   lua_ls = {
