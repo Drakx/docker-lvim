@@ -1,6 +1,6 @@
 # Personal lvim dev environment docker setup #
 
-Dockerized LunarVIM IDE for unfriendly environments with Go ready to go.
+Dockerized NVIM IDE for unfriendly environments with Go ready to go.
 
 The company I work for block connections to npm and other utilities needed for
 LunarVIM to work correctly out of the box. I've tried to include as many language servers

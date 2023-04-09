@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-LABEL description="Dockerized LunarVIM IDE for unfriendly environments with Go ready to go"
+LABEL description="Dockerized NVIM IDE for unfriendly environments with Go ready to go"
 
 RUN apk add --no-cache shadow xclip sudo ninja ranger shellcheck curl unzip wget zsh shfmt \
   tmux openssh go cargo python3 cmake jq grep make git neovim ripgrep nodejs npm alpine-sdk \
@@ -43,17 +43,12 @@ RUN mkdir -p /etc/sudoers.d \
 
 # Change the default shell
 RUN printf "MyPassword\nMyPassword" | passwd
-RUN echo "MyPassword" | chsh -s $(which zsh) kai
+RUN echo "MyPassword" | chsh -s $(which zsh) $(USER)
 
 WORKDIR $HOME
 USER $USER
 
 RUN cargo install stylua fd-find
-
-ENV LV_BRANCH='release-1.2/neovim-0.8'
-
-# Get the lunarvim config
-RUN  bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/fc6873809934917b470bff1b072171879899a36b/utils/installer/install.sh)
 
 RUN mkdir -p $HOME/go/src
 RUN mkdir -p $HOME/go/bin
