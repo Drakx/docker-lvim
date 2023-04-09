@@ -14,7 +14,8 @@ RUN sudo pip3 install pynvim black flake8 tldr
 RUN sudo npm install -g neovim prettier \
   yaml-language-server bash-language-server \
   typescript-language-server ansible-language-server mysql-language-server \
-  pyright sql-language-server vscode-langservers-extracted
+  pyright sql-language-server vscode-langservers-extracted \
+  ansible/ansible-language-server
 
 ENV \
   UID="1000" \
