@@ -40,5 +40,8 @@ If you don't want to build the image which takes roughly 10 mins or so you can p
 
 Don't forget to run `:PackerSync` after running the container
 
+# TODO #
+Add github action for pulling in my 'main' NeoVIM repo to the config/nvim folder
+
 ### Thanks ###
 Thanks to the LunarVIM team for an easy to use out of the box config
