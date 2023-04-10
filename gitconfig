@@ -1,0 +1,10 @@
+[user]
+	name = Kai Windle
+	email = myemail@me.com
+[url "git@bitbucket.org:"]
+	insteadOf = https://bitbucket.org/
+[alias]
+    l = log --relative-date --graph --abbrev-commit -10
+    ll = log --relative-date --graph --abbrev-commit
+[format]
+    pretty = format:%C(yellow)%h %Cblue%>(12)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s
