@@ -44,7 +44,7 @@ RUN mkdir -p /etc/sudoers.d \
 
 # Change the default shell
 RUN printf "MyPassword\nMyPassword" | passwd
-RUN echo "MyPassword" | chsh -s $(which zsh) $(USER)
+RUN echo "MyPassword" | chsh -s $(which zsh) $USER
 
 WORKDIR $HOME
 USER $USER
