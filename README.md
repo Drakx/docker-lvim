@@ -1,9 +1,9 @@
-# Personal lvim dev environment docker setup #
+# Personal NVIM dev environment docker setup #
 
 Dockerized NVIM IDE for unfriendly environments with Go ready to go.
 
 The company I work for block connections to npm and other utilities needed for
-LunarVIM to work correctly out of the box. I've tried to include as many language servers
+NVIM to work correctly out of the box. I've tried to include as many language servers
 as possible (well at least the common ones)
 
 This image is more or less is becoming a full blown dev environment for "just in case" moments.
@@ -38,10 +38,10 @@ an example of me using the src dir for go projects
 ## Pull image ##
 If you don't want to build the image which takes roughly 10 mins or so you can pull via `docker pull fluiddrakx/lvim`
 
-Don't forget to run `:PackerSync` after running the container
+Don't forget to run `:Lazy sync` after running the container
 
 # TODO #
-Add github action for pulling in my 'main' NeoVIM repo to the config/nvim folder
+[x] Add github action for pulling in my 'main' NeoVIM repo to the config/nvim folder
 
 ### Thanks ###
-Thanks to the LunarVIM team for an easy to use out of the box config
+Thanks to the NeoVIM team
