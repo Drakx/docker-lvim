@@ -34,10 +34,11 @@ local options = {
 	sidescrolloff = 8,
 	guifont = "monospace:h17",            -- the font used in graphical neovim applications
 	-- background = "dark",
-	foldmethod = "syntax",                -- Folds
+	-- foldmethod = "syntax",                -- Folds
 	foldenable = true,
-	--set foldnestmax=10
-	--"set foldlevelstart=3
+	-- foldnestmax = 10
+	foldexpr = "nvim_treesitter#foldexpr()",
+	foldmethod = "expr", --"set foldlevelstart=3
 	--set nofoldenable                         " Make sure folds are not folded when opening
 	--set foldlevel=2
 
