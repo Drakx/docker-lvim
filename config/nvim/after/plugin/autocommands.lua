@@ -65,3 +65,10 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 		vim.fn.setpos(".", save_cursor)
 	end,
 })
+
+-- Auto resize
+vim.api.nvim_create_autocmd({ "VimResized" }, {
+	callback = function()
+		vim.cmd("tabdo wincmd =")
+	end,
+})
