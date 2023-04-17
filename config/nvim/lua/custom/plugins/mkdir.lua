@@ -1,1 +1,8 @@
-return "jghauser/mkdir.nvim"
+return {
+  "jghauser/mkdir.nvim",
+  version = "",
+  dependencies = {},
+  config = function()
+
+  end,
+}

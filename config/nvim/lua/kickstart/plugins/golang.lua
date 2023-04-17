@@ -1,6 +1,7 @@
 --local icons = require("icons")
 return {
   "ray-x/go.nvim",
+  version = "*",
   dependencies = {
     "ray-x/guihua.lua",
     -- "neovim/nvim-lsconfig", -- already installed
@@ -110,5 +111,5 @@ return {
       on_stderr = function(err, data) _, _ = err, data end,                        -- callback for stderr
       on_exit = function(code, signal, output) _, _, _ = code, signal, output end, -- callback for jobexit, output : string
     })
-  end
+  end,
 }

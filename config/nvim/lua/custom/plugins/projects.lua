@@ -1,6 +1,7 @@
 return {
   "ahmedkhalf/project.nvim",
   version = "*",
+  dependencies = {},
   config = function()
     require('project_nvim').setup {
       ---@usage set to false to disable project.nvim.

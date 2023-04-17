@@ -60,6 +60,7 @@ end
 return {
   "nvim-lualine/lualine.nvim",
   version = "*",
+  dependencies = {},
   config = function()
     require('lualine').setup {
       options = {

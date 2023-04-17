@@ -1,6 +1,7 @@
 return {
   "lewis6991/impatient.nvim",
   version = "*",
+  dependencies = {},
   config = function()
     require("gitsigns").setup {
       signs = {
