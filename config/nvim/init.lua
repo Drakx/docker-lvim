@@ -202,6 +202,7 @@ require('lazy').setup({
   { import = 'custom.plugins.projects' },
   { import = 'custom.plugins.todo' },
   { import = 'custom.plugins.toggleterm' },
+  { import = 'custom.plugins.trouble' },
   { import = 'custom.plugins.undotree' },
 }, {})
 
