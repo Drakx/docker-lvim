@@ -1,4 +1,4 @@
-rn {
+return {
   "folke/todo-comments.nvim",
   version = "*",
   dependencies = {
