@@ -72,3 +72,13 @@ vim.api.nvim_create_autocmd({ "VimResized" }, {
 		vim.cmd("tabdo wincmd =")
 	end,
 })
+
+vim.api.nvim_create_autocmd("User", {
+	pattern = "LazyVimStarted",
+	callback = function()
+		local stats = require("lazy").stats()
+		local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
+		print("⚡ Neovim loaded " .. stats.count .. " plugins in " .. ms .. "ms")
+		pcall(vim.cmd.AlphaRedraw)
+	end,
+})
