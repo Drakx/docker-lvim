@@ -16,7 +16,7 @@ keymap("n", "<TAB>", ":bnext<CR>", opts)
 keymap("n", "<S-TAB>", ":bprevious<CR>", opts)
 --
 -- Fold with spacebar
-keymap("n", "<Space>", "za", opts)
+keymap("n", "<leader>z", "za", opts)
 -- keymap("n", "<Space>R", "zR", opts)
 
 -- Stop highlight with comma spacebar

@@ -38,8 +38,8 @@ P.S. You can delete this when you're done too. It's your config now :)
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
-vim.g.mapleader = ','
-vim.g.maplocalleader = ','
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
 -- Install package manager
 --    https://github.com/folke/lazy.nvim
@@ -192,16 +192,17 @@ require('lazy').setup({
   --    An additional note is that if you only copied in the `init.lua`, you can just comment this line
   --    to get rid of the warning telling you that there are not plugins in `lua/custom/plugins/`.
 
-  { import = 'custom.plugins' },
-  -- { import = 'custom.plugins.autopairs' },
-  -- { import = 'custom.plugins.undotree' },
-  -- { import = 'custom.plugins.bufferline' },
-  -- { import = 'custom.plugins.lualine' },
-  -- { import = 'custom.plugins.mkdir' },
-  -- { import = 'custom.plugins.neotree' },
-  -- { import = 'custom.plugins.projects' },
-  -- { import = 'custom.plugins.toggleterm' },
-  -- { import = 'custom.plugins.undotree' },
+  -- { import = 'custom.plugins' },
+  { import = 'custom.plugins.autopairs' },
+  { import = 'custom.plugins.bufferline' },
+  { import = 'custom.plugins.gitsigns' },
+  { import = 'custom.plugins.lualine' },
+  { import = 'custom.plugins.mkdir' },
+  { import = 'custom.plugins.neotree' },
+  { import = 'custom.plugins.projects' },
+  { import = 'custom.plugins.todo' },
+  { import = 'custom.plugins.toggleterm' },
+  { import = 'custom.plugins.undotree' },
 }, {})
 
 -- [[ Setting options ]]
