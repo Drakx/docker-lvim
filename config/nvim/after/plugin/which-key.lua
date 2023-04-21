@@ -86,7 +86,7 @@ local mappings = {
 	},
 	["c"] = { "<cmd>bdelete!<cr>", "[C]lose Buffer" },
 	["d"] = {
-		name = "Debug",
+		name = "[D]ebug",
 		b = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "[D]ebug [B]reakpoint" },
 		c = { "<cmd>lua require'dap'.continue()<cr>", "[D]ebug [C]ontinue" },
 		l = { "<cmd>lua require'dap'.run_last()<cr>", "[D]ebug [L]ast" },
@@ -107,7 +107,7 @@ local mappings = {
 	-- },
 	-- ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
 	["g"] = {
-		name = "Git",
+		name = "[G]it",
 		g = { "<cmd>lua _LAZYGIT_TOGGLE()<cr>", "Lazygit" },
 		j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
 		k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
@@ -130,7 +130,7 @@ local mappings = {
 		},
 	},
 	["l"] = {
-		name = "LSP",
+		name = "[L]SP",
 		a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code [A]ction" },
 		d = {
 			"<cmd>Telescope lsp_document_diagnostics<cr>",
@@ -191,7 +191,7 @@ local mappings = {
 		},
 	},
 	["s"] = {
-		name = "Search",
+		name = "[S]earch",
 		b = { "<cmd>Telescope git_branches<cr>", "[S]earch git [b]ranches" },
 		c = { "<cmd>Telescope colorscheme<cr>", "[S]earch [c]olorscheme" },
 		d = { "<cmd>Telescope diagnostics<cr>", "[S]earch [d]iagnostics" },
@@ -206,7 +206,7 @@ local mappings = {
 		R = { "<cmd>Telescope registers<cr>", "[S]earch [R]egisters" },
 	},
 	["t"] = {
-		name = "Terminal",
+		name = "[T]erminal",
 		-- n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
 		u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
 		t = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
@@ -219,7 +219,7 @@ local mappings = {
 	["q"] = { "<cmd>q!<cr>", "[Q]uit" },
 	["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "[P]rojects" },
 	["L"] = {
-		name = 'Lazy',
+		name = '[L]azy',
 		i = { "<cmd>Lazy install<cr>", "[L]azy [I]nstall" },
 		u = { "<cmd>Lazy update<cr>", "[L]azy [U]pdate" },
 		s = { "<cmd>Lazy sync<cr>", "[L]azy [S]ync" },
