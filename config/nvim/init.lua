@@ -96,9 +96,11 @@ require('lazy').setup({
     'hrsh7th/nvim-cmp',
     dependencies = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip' },
   },
-
+  -- add friendly snippets to LuaSnip
+  'rafamadriz/friendly-snippets',
+  require("luasnip.loaders.from_vscode").lazy_load()
   -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim',          opts = {} },
+      { 'folke/which-key.nvim', opts = {} },
   {
     -- Adds git releated signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
