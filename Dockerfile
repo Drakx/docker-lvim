@@ -134,3 +134,4 @@ RUN go install golang.org/x/tools/gopls@latest
 RUN go install golang.org/x/vuln/cmd/govulncheck@latest
 RUN go install gotest.tools/gotestsum@latest
 RUN go install mvdan.cc/gofumpt@latest
+RUN go install github.com/google/pprof@latest
