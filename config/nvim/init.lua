@@ -98,7 +98,7 @@ require('lazy').setup({
   },
   -- add friendly snippets to LuaSnip
   'rafamadriz/friendly-snippets',
-  require("luasnip.loaders.from_vscode").lazy_load()
+  -- require("luasnip.loaders.from_vscode").lazy_load()
   -- Useful plugin to show you pending keybinds.
       { 'folke/which-key.nvim', opts = {} },
   {
