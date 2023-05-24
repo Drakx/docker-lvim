@@ -201,6 +201,7 @@ require('lazy').setup({
 
   -- { import = 'custom.plugins' },
   { import = 'custom.plugins.autopairs' },
+  { import = 'custom.plugins.blankline' },
   { import = 'custom.plugins.bufferline' },
   { import = 'custom.plugins.gitsigns' },
   { import = 'custom.plugins.lualine' },
