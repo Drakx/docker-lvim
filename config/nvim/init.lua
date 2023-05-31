@@ -172,8 +172,7 @@ require('lazy').setup({
     --       These are some example plugins that I've included in the kickstart repository.
     --       Uncomment any of the lines below to enable them.
     {import = 'kickstart.plugins.autoformat'},
-    {import = 'kickstart.plugins.debug'},
-    {import = 'kickstart.plugins.golang'},
+    {import = 'kickstart.plugins.debug'}, {import = 'kickstart.plugins.golang'},
     {import = 'kickstart.plugins.zig'},
 
     -- NOTE: The import below automatically adds your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
@@ -431,26 +430,28 @@ local servers = {
     pyright = {},
     rust_analyzer = {},
     zls = {},
-    bashls = { filetypes = { 'sh', 'zsh' } },
+    bashls = {filetypes = {'sh', 'zsh'}},
     yamlls = {},
     jsonls = {},
     lua_ls = {
-        Lua = {
-            runtime = {
-                -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-                version = 'LuaJIT'
-            },
-            diagnostics = {
-                -- Get the language server to recognize the `vim` global
-                globals = { 'vim' }
-            },
-            workspace = {
-                -- Make the server aware of Neovim runtime files
-                library = vim.api.nvim_get_runtime_file("", true),
-                checkThirdParty = false
-            },
-            -- Do not send telemetry data containing a randomized but unique identifier
-            telemetry = { enable = false }
+        settings = {
+            Lua = {
+                runtime = {
+                    -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+                    version = 'LuaJIT'
+                },
+                diagnostics = {
+                    -- Get the language server to recognize the `vim` global
+                    globals = {'vim'}
+                },
+                workspace = {
+                    -- Make the server aware of Neovim runtime files
+                    library = vim.api.nvim_get_runtime_file("", true),
+                    checkThirdParty = false
+                },
+                -- Do not send telemetry data containing a randomized but unique identifier
+                telemetry = {enable = false}
+            }
         }
     }
 }
