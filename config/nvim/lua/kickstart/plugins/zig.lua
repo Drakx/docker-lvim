@@ -12,7 +12,7 @@ return {
     end
     require("zls").setup {
       on_attach = on_attach,
-    },
+    }
     -- Set completeopt to have a better completion experience
     set completeopt=menuone,noinsert,noselect,
     -- Enable completions as you type
