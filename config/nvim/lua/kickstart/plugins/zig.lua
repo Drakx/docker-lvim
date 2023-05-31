@@ -12,7 +12,7 @@ return {
         require('completion').on_attach()
     end
     -- Set completeopt to have a better completion experience
-    vim.o.completeopt = "menuone,noinsert,noselect"
+    vim.o.completeopt = {'menuone', 'noinsert', 'noselect'}
 
     -- Enable completions as you type
     vim.g.completion_enable_auto_popup = 1
