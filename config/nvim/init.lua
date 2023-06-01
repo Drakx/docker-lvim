@@ -169,18 +169,11 @@ require('lazy').setup({
   {
     -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
-    -- dependencies = {
-    --   'nvim-treesitter/nvim-treesitter-textobjects',
-    -- },
-    build = ":TSUpdate"
-  },
-  {
-    -- Highlight, edit, and navigate code
-    'nvim-treesitter/nvim-treesitter',
+    commit = '23dfae4',
     dependencies = {
       'nvim-treesitter/nvim-treesitter-textobjects',
     },
-    build = ':TSUpdate',
+    build = ":TSUpdate"
   },
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
