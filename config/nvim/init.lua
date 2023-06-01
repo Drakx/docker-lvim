@@ -279,7 +279,14 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 -- [[ Configure Telescope ]]
 -- See `:help telescope` and `:help telescope.setup()`
 require('telescope').setup {
-  defaults = { mappings = { i = { ['<C-u>'] = false, ['<C-d>'] = false } } }
+  defaults = {
+    mappings = {
+      i = {
+        ['<C-u>'] = false,
+        ['<C-d>'] = false
+      }
+    }
+  }
 }
 
 -- Enable telescope fzf native, if installed
@@ -310,7 +317,7 @@ require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
   ensure_installed = {
     'json', 'yaml', 'bash', 'c', 'cpp', 'go', 'gomod', 'regex', 'lua',
-    'python', 'rust', 'tsx', 'vimdoc', 'vim', 'zls'
+    'python', 'rust', 'tsx', 'vimdoc', 'vim', 'zig'
   },
 
   -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
