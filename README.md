@@ -23,17 +23,17 @@ While keeping the image as small as possible some of the utilities included
 
 
 ## Build ##
-` docker build -t windle/lvim .`
+` docker build -t windle/nvim .`
 
 ## Run ##
-` docker run --rm -it windle/lvim /bin/zsh`
+` docker run --rm -it windle/nvim /bin/zsh`
 
 If you'd like to attach a volume then run this
-`docker run -it -v {YOUR FOLDER LOCATION}:/home/kai/{SOME LOCATION} windle/lvim /bin/zsh`
+`docker run -it -v {YOUR FOLDER LOCATION}:$(HOME)/{SOME LOCATION} windle/lvim /bin/zsh`
 
 ### Example ###
 an example of me using the src dir for go projects
-`docker run -it -v $(HOME)/go/src:/home/kai/go/src windle/lvim /bin/zsh`
+`docker run -it -v $(HOME)/go/src:$(HOME)go/src windle/nvim /bin/zsh`
 
 ## Pull image ##
 If you don't want to build the image which takes roughly 10 mins or so you can pull via `docker pull fluiddrakx/lvim`
