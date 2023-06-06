@@ -149,7 +149,23 @@ require('lazy').setup({
     'lukas-reineke/indent-blankline.nvim',
     -- Enable `lukas-reineke/indent-blankline.nvim`
     -- See `:help indent_blankline.txt`
-    opts = { char = '┊', show_trailing_blankline_indent = false }
+    opts = {
+      char = '┊',
+      show_trailing_blankline_indent = false,
+      filetype_exclude = {
+        "help",
+        "lazy",
+        "lspinfo",
+        "TelescopePrompt",
+        "TelescopeResults",
+        "mason",
+        "",
+      },
+      buftype_exclude = { "terminal" },
+      space_char_blankline = " ",
+      show_current_context = true,
+      show_current_context_start = true,
+    },
   },                                      -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim', opts = {} }, -- Fuzzy Finder (files, lsp, etc)
   {
@@ -195,7 +211,6 @@ require('lazy').setup({
 
   -- { import = 'custom.plugins' },
   { import = 'custom.plugins.autopairs' },
-  { import = 'custom.plugins.blankline' },
   { import = 'custom.plugins.bufferline' },
   { import = 'custom.plugins.gitsigns' },
   { import = 'custom.plugins.lualine' },
