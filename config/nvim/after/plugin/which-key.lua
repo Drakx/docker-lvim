@@ -215,6 +215,11 @@ local mappings = {
 		h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
 		v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
 	},
+        ["T"] = {
+		name = "[T]rouble",
+		t = { "<cmd>Trouble", "[T]rouble" },
+		r = { "<cmd>TroubleRefresh", "[T]rouble [R]efresh" },
+	},
 	["w"] = { "<cmd>w!<cr>", "[W]rite" },
 	["q"] = { "<cmd>q!<cr>", "[Q]uit" },
 	["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "[P]rojects" },
