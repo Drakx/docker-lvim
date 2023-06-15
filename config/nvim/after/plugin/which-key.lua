@@ -217,8 +217,8 @@ local mappings = {
 	},
         ["T"] = {
 		name = "[T]rouble",
-		t = { "<cmd>Trouble", "[T]rouble" },
-		r = { "<cmd>TroubleRefresh", "[T]rouble [R]efresh" },
+		t = { "<cmd>Trouble<cr>", "[T]rouble" },
+		r = { "<cmd>TroubleRefresh<cr>", "[T]rouble [R]efresh" },
 	},
 	["w"] = { "<cmd>w!<cr>", "[W]rite" },
 	["q"] = { "<cmd>q!<cr>", "[Q]uit" },
