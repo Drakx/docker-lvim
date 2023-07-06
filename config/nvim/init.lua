@@ -216,6 +216,7 @@ require('lazy').setup({
   { import = 'custom.plugins.lualine' },
   { import = 'custom.plugins.mkdir' },
   { import = 'custom.plugins.neotree' },
+  { import = 'custom.plugins.rainbow-delimiters' },
   { import = 'custom.plugins.projects' },
   { import = 'custom.plugins.todo' },
   { import = 'custom.plugins.toggleterm' },
